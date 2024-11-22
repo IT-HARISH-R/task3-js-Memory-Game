@@ -180,11 +180,20 @@ function chackgame(){
 const volum = document.getElementById('volum');
 let ison = true;
 const audio = document.getElementById('myAudio');
-audio.play();
 
-document.addEventListener('load',()=>{
+function play(){
     audio.play();
-})
+}
+
+play();
+
+
+
+window.addEventListener('load', () => {
+    play();
+    audio.play();
+});
+
 
 volum.addEventListener('click',()=>{
     const mute = document.getElementById('mute');
