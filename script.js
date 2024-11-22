@@ -7,6 +7,14 @@ function loading(){
     
     setTimeout(() => {
         load.classList.add('hidden');
+        while (gamebord.firstChild) {
+            gamebord.removeChild(gamebord.firstChild);
+        }
+
+        flippedCard = [];
+
+        shuffeCards();
+
         displayCard();
     }, 3000);
 }
@@ -116,7 +124,6 @@ function flipCard() {
         this.classList.remove('bg-red-500', 'mx-auto', 'cursor-pointer');
         totalclick++;
         this.innerHTML = inputArr[cardId].icone;
-        console.log(flippedCard)
         flippedCard[0].classList.remove('active');
         flippedCard[0].classList.add('cursor-not-allowed')
         if (flippedCard.length == 2) {
@@ -133,8 +140,6 @@ function chackMatch() {
         flippedCard[1].classList.remove('active');
         flippedCard[1].classList.add('cursor-not-allowed')
         count++;
-        console.log(`count is : ${count}`)
-        console.log(`arr is : ${inputArr.length/2}`)
         chackgame();
     }
     else {
@@ -165,6 +170,7 @@ function chackgame(){
             totalclick=0;
             end.classList.add('hidden')
             loading();
+            
         })
     }
 }
