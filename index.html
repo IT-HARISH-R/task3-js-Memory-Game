@@ -15,23 +15,75 @@
 </head>
 
 <body class="">
-
     <div class="container  mx-auto">
 
-        <h1 class="text-center mt-8 text-3xl ">Memory Game</h1>
+        <h1 class="text-center mt-8 text-3xl flex justify-center"><span class="text-styles">Memory Game </span>
+            <div id="volum" class="flex">
+                <audio id="myAudio" >
+                    <source src="./audio/WhatsApp Audio 2024-11-21 at 16.52.54_2f733df0.mp3" type="audio/mpeg">
+                </audio>
+                <div id="unmute" class="flex"> <i class="fa-solid fa-volume-high pl-4"></i>
+                </div>
+                <div id="mute" class="hidden">
+                    <i class="fa-solid fa-volume-xmark pl-4"></i>
+                </div>
+            </div>
 
-        <div id="root"
-            class=" grid my-20 w-full p-8 md:max-w-[450px] grid-cols-4 gap-y-4 gap-x-4 md:gap-x-2 mx-auto md:my-10 ">
+        </h1>
+
+        <!-- <div class="absolute flex justify-center bg-black my-20 w-full md:max-w-[450px] mx-auto md:my-10 ">
+            
+        </div> -->
+
+        <div class="md:max-w-[450px] relative mx-auto">
+            <div id="root"
+                class="absolute  grid my-20 w-full p-8  grid-cols-4 gap-y-4 gap-x-4 md:gap-x-2 mx-auto md:my-10 ">
+            </div>
 
         </div>
+
+        <div id="loading" class="absolute hidden left-[50%] translate-x-[-50%] top-[50%] translate-y-[-55%]">
+            <div class="loader ">
+                <svg class="circle-outer" viewBox="0 0 86 86">
+                    <circle class="back" cx="43" cy="43" r="40"></circle>
+                    <circle class="front" cx="43" cy="43" r="40"></circle>
+                    <circle class="new" cx="43" cy="43" r="40"></circle>
+                </svg>
+                <svg class="circle-middle" viewBox="0 0 60 60">
+                    <circle class="back" cx="30" cy="30" r="27"></circle>
+                    <circle class="front" cx="30" cy="30" r="27"></circle>
+                </svg>
+                <svg class="circle-inner" viewBox="0 0 34 34">
+                    <circle class="back" cx="17" cy="17" r="14"></circle>
+                    <circle class="front" cx="17" cy="17" r="14"></circle>
+                </svg>
+            </div>
+
+        </div>
+
+
+
         <div id="end" class="absolute w-[75%] sm:w-1/2  bg-slate-600
         top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]
         rounded-lg p-8 text-5xl lg:text-8xl text-center hidden">
-            <h1 class="text-white">You Won The Match</h1>
+            <h1 class="text-white">You Won! </h1>
             <h1 class="text-white text-3xl lg:text-6xl" id="totalclick"></h1>
+            <div class="loader-6 flex justify-center">
+                <div class="loader-square"></div>
+                <div class="loader-square"></div>
+                <div class="loader-square"></div>
+                <div class="loader-square"></div>
+                <div class="loader-square"></div>
+                <div class="loader-square"></div>
+                <div class="loader-square"></div>
+              </div>
             <button id="reset" class="bg-gray-400 rounded-lg mt-4 px-2 text-2xl">Reset</button>
         </div>
     </div>
+
+
+
+
 
 </body>
 <script src="./script.js"></script>
