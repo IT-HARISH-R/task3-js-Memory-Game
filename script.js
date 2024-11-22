@@ -115,7 +115,6 @@ function flipCard() {
         flippedCard.push(this);
         this.classList.remove('bg-red-500', 'mx-auto', 'cursor-pointer');
         totalclick++;
-        console.log('nnnnnnnnnnnnnnnnnnn');
         this.innerHTML = inputArr[cardId].icone;
         console.log(flippedCard)
         flippedCard[0].classList.remove('active');
@@ -156,10 +155,7 @@ function chackgame(){
         const end = document.getElementById('end');
         const total = document.getElementById('totalclick')
         end.classList.remove('hidden')
-        console.log(reset);
-        console.log(end);
         total.textContent=`Total click: ${totalclick}`;
-        console.log(totalclick);
         reset.addEventListener('click',()=>{
             while (gamebord.firstChild) {
                 gamebord.removeChild(gamebord.firstChild);
@@ -181,16 +177,22 @@ const volum = document.getElementById('volum');
 let ison = true;
 const audio = document.getElementById('myAudio');
 
-function play(){
+var promise = document.querySelector('audio').play();
+
+if (promise !== undefined) {
+  promise.then(_ => {
     audio.play();
+
+  }).catch(error => {
+    audio.pause();
+  });
 }
 
-play();
 
 
+audio.play();
 
 window.addEventListener('load', () => {
-    play();
     audio.play();
 });
 
@@ -211,8 +213,6 @@ volum.addEventListener('click',()=>{
         unmute.classList.remove('hidden');
         unmute.classList.add('flex');
         mute.classList.add('hidden');
-        console.log(mute);
-        console.log(unmute); 
         audio.play();
     }
     else{
@@ -221,8 +221,7 @@ volum.addEventListener('click',()=>{
         mute.classList.add('flex')
         unmute.classList.add('hidden');
         audio.pause()
-        console.log(mute);
-        console.log(unmute);
+
     }
 
 })

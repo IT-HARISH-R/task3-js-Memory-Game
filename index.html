@@ -19,8 +19,8 @@
 
         <h1 class="text-center mt-8 text-3xl flex justify-center"><span class="text-styles">Memory Game </span>
             <div id="volum" class="flex">
-                <audio id="myAudio" >
-                    <source src="./audio/WhatsApp Audio 2024-11-21 at 16.52.54_2f733df0.mp3" type="audio/mpeg">
+                <audio id="myAudio" autoplay >
+                    <source allow="autoplay"  src="./audio/WhatsApp Audio 2024-11-21 at 16.52.54_2f733df0.mp3" type="audio/mpeg">
                 </audio>
                 <div id="unmute" class="flex"> <i class="fa-solid fa-volume-high pl-4"></i>
                 </div>
@@ -31,9 +31,7 @@
 
         </h1>
 
-        <!-- <div class="absolute flex justify-center bg-black my-20 w-full md:max-w-[450px] mx-auto md:my-10 ">
-            
-        </div> -->
+
 
         <div class="md:max-w-[450px] relative mx-auto">
             <div id="root"
@@ -61,8 +59,6 @@
 
         </div>
 
-
-
         <div id="end" class="absolute w-[75%] sm:w-1/2  bg-slate-600
         top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]
         rounded-lg p-8 text-5xl lg:text-8xl text-center hidden">
@@ -80,12 +76,6 @@
             <button id="reset" class="bg-gray-400 rounded-lg mt-4 px-2 text-2xl">Reset</button>
         </div>
     </div>
-
-
-
-
-
 </body>
 <script src="./script.js"></script>
-
 </html>
